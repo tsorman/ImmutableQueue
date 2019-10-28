@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.NoSuchElementException;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -28,10 +29,16 @@ public class ImmutableQueueTest {
 		testQueueNum = new ImmutableQueue<Integer>() ;
     }
 	
+	@AfterAll
+	static void afterAll()
+	{
+		testQueue = null ;
+		testQueueNum = null ;
+	}
+	
 	@Test
 	public void testIsEmpty () {
-		boolean isQueueEmpty = testQueue.isEmpty() ;
-		assertTrue(isQueueEmpty);
+		assertTrue(testQueue.isEmpty());
 	}
 	
 	@Test
@@ -59,6 +66,14 @@ public class ImmutableQueueTest {
 		assertTrue ( deQueued.isEmpty()) ;
 		
 		assertNotEquals ( testQueue , deQueued) ;
+	}
+	
+	@Test
+	public void testQueueNull () 
+	{
+		assertThrows(IllegalArgumentException.class, () -> {
+			testQueue.enQueue(null) ;
+	    });
 	}
 	
 	@Test
