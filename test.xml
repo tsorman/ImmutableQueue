@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<project name="BuildImmutableQueue" default="runTests" >
+
+
+<target name="runTests" description="Run JUnit tests">
+    <junit printsummary="yes" dir="test-classes" fork="true">
+        <classpath>
+            <pathelement location="inst-classes" />
+        </classpath>
+        <test name="com.tsorman.immutable_queue.ImmutableQueueTest" haltonfailure="no" outfile="result">
+            <formatter type="xml" />
+        </test>
+    </junit>
+</target>
+
+</project>
