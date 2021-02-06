@@ -101,27 +101,27 @@ public final class ImmutableQueue<T> implements Queue<T>{
 		// TODO Auto-generated method stub
 		return this.inputStack.isEmpty() && this.outputStack.isEmpty();
 	}
-	
+}
 	
 	/**
 	 * An implementation in Java of an immutable Stack. This is used for the implementation of {@link com.tsorman.immutable_queue.ImmutableQueue}
 	 * @author Nikos Tsorman 
 	 */
-	private static final class ImmutableStack<T> {
+	final class ImmutableStack<T> {
 		/**
 		 * The head of this Stack.
 		 */
-		private final T head ;
+		final T head ;
 		
 		/**
 		 * The tail of this stack.
 		 */
-		private final ImmutableStack<T> stackTail ;
+		final ImmutableStack<T> stackTail ;
 		
 		/**
 		 * Creates a new empty {@link com.tsorman.immutable_queue.ImmutableQueue.ImmutableStack}.
 		 */
-		private ImmutableStack () {
+		ImmutableStack () {
 			this.head = null ;
 			this.stackTail = null ;
 		}
@@ -189,4 +189,3 @@ public final class ImmutableQueue<T> implements Queue<T>{
 		
 	}
 
-}

@@ -1,5 +1,5 @@
 # ImmutableQueue
-A Java Implementation of an Immutable Queue implementing the standard Queue interface.
+A Java Implementation of an Immutable Queue using the standard Queue interface.
 
 ```
 public interface Queue<T> {
