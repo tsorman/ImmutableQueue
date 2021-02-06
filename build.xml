@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<project name="BuildImmutableQueue" default="buildQueue" >
+	
+	
+	<property name="jarName" value="ImmutableQueue.jar" />
+	<property name="buildLocationFolder" value="../builds" />
+	<property name="buildLocationJar" value="${buildLocationFolder}/${jarName}" />
+	
+	<target name="clean" >
+		<delete>
+		  <fileset dir="${buildLocationFolder}" includes="**/*.jar"/>
+		</delete>
+	</target>
+	
+	<target name="buildQueue">
+		<jar destfile="${buildLocationJar}" >
+			<fileset dir="bin">
+			</fileset>
+		</jar>
+	</target>
+	
+	
+</project>
